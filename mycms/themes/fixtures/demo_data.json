@@ -1,0 +1,26 @@
+[
+    {
+        "model": "themes.theme",
+        "pk": 1,
+        "fields": {
+            "title": "Введение в программирование",
+            "description": "Основные концепции и элементы программирования."
+        }
+    },
+    {
+        "model": "themes.theme",
+        "pk": 2,
+        "fields": {
+            "title": "Условные операторы",
+            "description": "Использование if, else и elif для создания логических ветвлений."
+        }
+    },
+    {
+        "model": "themes.theme",
+        "pk": 3,
+        "fields": {
+            "title": "Циклы",
+            "description": "Повторение блоков кода с помощью циклов for и while."
+        }
+    }
+]

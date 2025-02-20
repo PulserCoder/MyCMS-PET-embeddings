@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Welcome to My CMS</h2>
+    <p>Please <a href="{% url 'login' %}">login</a> or <a href="{% url 'register' %}">register</a> to continue.</p>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h1>Profile</h1>
+    <div class="card">
+        <div class="card-body">
+            <p>Ваш логин - <b>{{ user_profile.user.username }}</b></p>
+            <p>Ваш ID в системе - <b>{{ user_profile.user.id }}</b></p>
+
+            <h5 class="card-title">API Key</h5>
+            <p class="card-text" id="api-key">{{ user_profile.api_key }}</p>
+            <button class="btn btn-primary" onclick="copyToClipboard('#api-key')">Copy API Key</button>
+            <a href="{% url 'regenerate_api_key' %}" class="btn btn-warning">Regenerate API Key</a>
+        </div>
+    </div>
+</div>
+<div class="container mt-3">
+    <h2>P.S</h2>
+    <h5 class="card-title">API Key - ключ, благодаря которому вы сможете подключать свои приложения к одной CMS</h5>
+    <p><i>Важно! Вам не стоит распростронять этот ключ.</i></p>
+    <p>Если у вас будут вопросы по поводу этой CMS, обращайтесь к разработчику по кнопке ниже</p>
+    <a href="https://vk.com/licemer00" class="btn btn-info">Профиль VK</a>
+
+</div>
+<script>
+function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+    alert("API Key copied to clipboard!");
+}
+</script>
+{% endblock %}
